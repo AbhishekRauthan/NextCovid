@@ -11,3 +11,7 @@ body {
 .nav-item {
   @apply capitalize xs:text-lg xs:pt-2 pb-1 xs:mb-3 xs:text-center md:focus:hover:border-b-2 xs:border-b-2 border-black cursor-pointer xs:relative block;
 }
+
+.footer-link {
+  @apply capitalize block w-max xs:text-lg font-roboto cursor-pointer  xs:self-center  xs:border-b-2;
+}
