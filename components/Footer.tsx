@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-gray-700 mt-5 z-10">
+    <footer className="bg-gray-700">
       <div className="container mx-auto grid xs:grid-cols-1 xs:py-10 text-gray-50   xs:text-center">
         <h1 className="xs:text-xl font-source font-bold">Covid 19 Tracker</h1>
         <ul className="flex xs:flex-col xs:my-4 xs:align-middle">
