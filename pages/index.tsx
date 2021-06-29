@@ -11,7 +11,7 @@ export default function Home() {
         <Card
           imageSrc="world_map.svg"
           imageAlt="World Map"
-          text="Have a World view of the cases and recovery of covid-19. Select a country for if you want to and see the trend of cases"
+          text="Have a World view of the cases and recovery of covid-19. Select a country for if you want to and see the trend of cases. Also learn about international travel"
         />
 
         <Card
@@ -24,7 +24,7 @@ export default function Home() {
         <Card
           imageSrc="medical_research.svg"
           imageAlt="Medical Research"
-          text="Have a World view of the cases and recovery of covid-19. Select a country for if you want to and see the trend of cases"
+          text="Have a detailed look on available vaccines and research done for covid 19"
           notTopItem
         />
       </CardContainer>
