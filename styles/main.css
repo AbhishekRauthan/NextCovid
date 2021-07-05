@@ -9,7 +9,7 @@ body {
 }
 
 .nav-item {
-  @apply capitalize xs:text-lg xs:pt-2 pb-1 xs:mb-3 xs:text-center md:focus:hover:border-b-2 xs:border-b-2 border-black cursor-pointer xs:relative block;
+  @apply capitalize text-xl sm:px-2 xs:pt-2 mx-2 py-1 xs:mb-3 xs:text-center border-transparent md:hover:border-black border-b-2 xs:border-b-2 xs:border-black cursor-pointer xs:relative block;
 }
 
 .footer-link {
