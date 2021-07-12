@@ -5,9 +5,9 @@ const Navbar: FC = () => {
 
   return (
     <header className="bg-gray-50 ">
-      <div className="container flex md:flex-row justify-between items-center xs:p-3 sm:px-4 shadow-2xl xs:relative">
+      <div className="flex md:flex-row justify-between items-center xs:p-3 sm:px-4 shadow-2xl xs:relative">
         <div className="block">
-          <h1 className="xs:text-xl sm:text-4xl sm:py-3 capitalize font-bold font-source">
+          <h1 className="xs:text-xl sm:text-3xl sm:py-3 capitalize font-bold font-source">
             Covid 19 tracker
           </h1>
         </div>

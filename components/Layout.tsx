@@ -15,7 +15,7 @@ const Layout: FC<Props> = ({ children }) => {
         ></meta>
       </Head>
       <Navbar />
-      <main className="lg:max-w-screen-xl">{children}</main>
+      <main className="lg:max-w-max">{children}</main>
       <Footer/>
     </>
   );

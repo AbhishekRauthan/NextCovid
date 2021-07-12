@@ -18,8 +18,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      divideColor: ['hover', 'focus'],
-      display: ['responsive', 'group-hover', 'group-focus'],
+      transform: ['hover', 'focus'],
     },
   },
   plugins: [],
