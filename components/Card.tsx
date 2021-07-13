@@ -10,16 +10,16 @@ interface Props {
 const Card: FC<Props> = ({ notTopItem, imageSrc, imageAlt, text }) => {
   return (
     <div
-      className={`bg-gray-50 xs:w-3/4 shadow-2xl border-b-4 border-gray-800  ${
-        notTopItem ? "xs:mt-8" : ""
+      className={`bg-gray-50 w-2/4 md:mx-3.5 shadow-2xl border-b-4 border-gray-800 mx-auto ${
+        notTopItem ? "mt-8 md:mt-0" : ""
       }`}
     >
       <img
-        className="w-3/6 mx-auto xs:pt-2 xs:mt-2"
+        className="w-3/6 h-3/4 lg:h-1/2 sm:mb-5 mx-auto xs:pt-2 xs:mt-2"
         src={imageSrc}
         alt={imageAlt}
       />
-      <p className="xs:text-center xs:mt-4 xs:mx-3.5 xs:text-lg text-gray-800 xs:mb-6">
+      <p className="block text-center text-lg lg:text-xl text-gray-800 mb-6">
         {text}
       </p>
     </div>
