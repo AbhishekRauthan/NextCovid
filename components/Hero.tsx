@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Hero = () => {
   return (
     <div className="xs:w-72 w-10/12 md:w-11/12 lg:h-full lg:w-9/12 mx-auto my-10">
@@ -12,11 +14,17 @@ const Hero = () => {
           <div className="md:pt-6 md:flex flex-col md:flex-row md:justify-center hidden">
             <button
               className=" md:mr-6 bg-gray-800 hover:bg-gray-600 focus:bg-gray-600  md:px-5 md:py-3 rounded-full text-gray-50 hover:text-white focus:text-white shadow-lg hover:shadow-2xl transform hover:-translate-y-3 delay-150 duration-300 ease-in-out"
-            >Go to Map
+            >
+              <Link href="/map">
+                Go to Map
+              </Link>
             </button>
             <button
               className="border-b-2 border-transparent md:px-2 hover:border-black hover:shadow-lg transform hover:-translate-y-3 duration-300 ease-in-out "
-            >Learn about Covid &rarr;
+            >
+              <Link href="/about-covid">
+                Learn about Covid &rarr;
+              </Link>
             </button>
           </div>
         </div>

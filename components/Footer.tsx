@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FC } from "react";
 
 const Footer: FC = () => {
@@ -6,11 +7,23 @@ const Footer: FC = () => {
       <div className="container mx-auto py-10 sm:py-10 text-gray-50 text-center">
         <h1 className="text-xl sm:text-3xl md:text-4xl font-source font-bold">Covid 19 Tracker</h1>
         <ul className="flex flex-col md:flex-row items-center md:items-baseline md:justify-evenly text-center my-4">
-          <li className="footer-link md:ml-10">goto Map</li>
-          <li className="footer-link mt-3 md:m-0">About this tracker</li>
-          <li className="footer-link mt-3 md:m-0">Measures to Take</li>
+          <li className="footer-link md:ml-10">
+            <Link href="/map">
+              goto Map
+            </Link>
+          </li>
+          <li className="footer-link mt-3 md:m-0">
+            <Link href="/about">
+              About this tracker
+            </Link>
+          </li>
+          <li className="footer-link mt-3 md:m-0">
+            <Link href="/measures">
+              Measures to Take
+            </Link>
+          </li>
         </ul>
-        <p className="text-sm md:text-lg lg:text-xl mt-2 md:pt-5 text-gray-200">this site is for educational purpose only <br/> Created by Abhishek</p>
+        <p className="text-sm md:text-lg lg:text-xl mt-2 md:pt-5 text-gray-200">this site is for educational purpose only <br /> Created by Abhishek</p>
       </div>
     </footer>
   );
