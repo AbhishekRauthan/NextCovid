@@ -13,19 +13,5 @@ body {
 }
 
 .footer-link {
-  @apply capitalize block w-max xs:text-lg font-roboto cursor-pointer  xs:self-center  xs:border-b-2;
-}
-
-.shadow-bottom {
-  position: relative;
-}
-
-.shadow-bottom::before {
-  content: "";
-  position: absolute;
-  background-color: red;
-  top: 120%;
-  left: 0;
-  width: 100%;
-  height: 50%;
+  @apply capitalize block w-max text-lg sm:text-xl md:text-2xl font-roboto cursor-pointer  self-center border-b-2;
 }
