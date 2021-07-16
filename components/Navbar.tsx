@@ -20,7 +20,7 @@ const Navbar: FC = () => {
               } flex xs:flex-col flex-row justify-evenly w-max xs:p-3 bg-gray-50`}
           >
             <li className="nav-item">
-              <Link href="/about" >about this tracker</Link>
+              <Link href="/about" >goto about</Link>
             </li>
             <li className="nav-item">
               <Link href="/measures">

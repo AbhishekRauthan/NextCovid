@@ -14,7 +14,7 @@ const Footer: FC = () => {
           </li>
           <li className="footer-link mt-3 md:m-0">
             <Link href="/about">
-              About this tracker
+            goto About
             </Link>
           </li>
           <li className="footer-link mt-3 md:m-0">
