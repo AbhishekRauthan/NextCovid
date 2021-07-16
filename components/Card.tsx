@@ -10,7 +10,7 @@ interface Props {
 const Card: FC<Props> = ({ notTopItem, imageSrc, imageAlt, text }) => {
   return (
     <div
-      className={`bg-gray-50 w-2/4 md:mx-3.5 shadow-2xl border-b-4 border-gray-800 mx-auto ${
+      className={`bg-gray-50 w-3/4 md:mx-3.5 shadow-2xl border-b-4 border-gray-800 mx-auto ${
         notTopItem ? "mt-8 md:mt-0" : ""
       }`}
     >

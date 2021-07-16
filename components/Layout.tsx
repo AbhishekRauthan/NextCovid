@@ -7,7 +7,7 @@ interface Props {}
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <>
+    <div className="lg:container lg:mx-auto">
       <Head>
         <meta
           name="viewport"
@@ -15,9 +15,9 @@ const Layout: FC<Props> = ({ children }) => {
         ></meta>
       </Head>
       <Navbar />
-      <main className="lg:max-w-max">{children}</main>
+      <main>{children}</main>
       <Footer/>
-    </>
+    </div>
   );
 };
 
