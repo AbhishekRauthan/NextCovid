@@ -1,5 +1,6 @@
 import Layout from "../components/Layout"
 import AboutContainer from "../components/AboutContainer"
+import Button from "../components/Button"
 
 const About = () => {
   return (
@@ -12,6 +13,8 @@ const About = () => {
 
         <AboutContainer title="about covid-19">
           COVID-19 is the disease caused by a new coronavirus called SARS-CoV-2.  WHO first learned of this new virus on 31 December 2019, following a report of a cluster of cases of ‘viral pneumonia’ in Wuhan, People’s Republic of China.
+          <br />
+          <Button secondary content="Learn More" link="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19" />
         </AboutContainer>
       </div>
     </Layout >
