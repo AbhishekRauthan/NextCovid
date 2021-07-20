@@ -11,7 +11,7 @@ interface Props {
 const Button: FC<Props> = ({ content, link, secondary }) => {
   if (secondary) {
     return (
-      <button className="border-b-2 text-gray-800 border-transparent md:px-2 hover:border-black hover:shadow-lg transform hover:-translate-y-3 duration-300 ease-in-out">
+      <button className="text-gray-800 text-lg font-roboto font-bold  border-gray-600 md:border-transparent border-l-4 md:hover:border-gray-800 transform hover:translate-x-5 transition delay-150 duration-300 ease-in-out ">
         <Link href={link}>
           {content}
         </Link>

@@ -5,7 +5,7 @@ const Footer: FC = () => {
   return (
     <footer className="bg-gray-700">
       <div className="container mx-auto py-10 sm:py-10 text-gray-50 text-center">
-        <h1 className="text-xl sm:text-3xl md:text-4xl font-source font-bold">Covid 19 Tracker</h1>
+        <h1 className="text-xl sm:text-3xl md:text-4xl font-source font-bold">Covid-19 Tracker</h1>
         <ul className="flex flex-col md:flex-row items-center md:items-baseline md:justify-evenly text-center my-4">
           <li className="footer-link md:ml-10">
             <Link href="/map">

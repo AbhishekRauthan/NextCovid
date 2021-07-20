@@ -2,9 +2,14 @@ import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import CardContainer from "../components/CardContainer";
 import Card from "../components/Card";
+import Head from 'next/head'
 
 export default function Home() {
   return (
+    <>
+    <Head>
+      <title>Covid-19 Tracker</title>
+    </Head>
     <Layout>
       <Hero />
       <CardContainer>
@@ -29,5 +34,6 @@ export default function Home() {
         />
       </CardContainer>
     </Layout>
+  </>
   );
 }

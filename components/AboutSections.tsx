@@ -8,11 +8,11 @@ const AboutContainer: FC<Props> = ({ title, children }) => {
   return (
     <div className="ml-3 mr-5 text-left">
       <h1
-        className="text-xl font-roboto capitalize text-gray-800 border-b-2 border-gray-800  inline-block">
+        className="text-xl md:text-2xl font-roboto capitalize text-gray-800 border-b-2 border-gray-800  inline-block">
         {title}
       </h1>
       <p
-        className="mt-2.5 text-gray-700 font-medium text-lg leading-5">
+        className="mt-2.5 text-gray-700 font-medium text-lg md:text-xl leading-5">
         {children}
       </p>
     </div>
