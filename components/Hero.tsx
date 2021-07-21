@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from '../components/Button'
 
 const Hero = () => {
   return (
@@ -11,21 +12,10 @@ const Hero = () => {
           <p className="xs:text-md md:text-lg lg:text-xl text-gray-700 xs:pt-2 sm:mt-3 font-roboto">
             Learn how to defend yourself from Covid 19, it's rate of spread, countries affected and much more.
           </p>
-          <div className="md:pt-6 md:flex flex-col md:flex-row md:justify-center hidden">
-            <button
-              className=" md:mr-6 bg-gray-800 hover:bg-gray-600 focus:bg-gray-600  md:px-5 md:py-3 rounded-full text-gray-50 hover:text-white focus:text-white shadow-lg hover:shadow-2xl transform hover:-translate-y-3 delay-150 duration-300 ease-in-out"
-            >
-              <Link href="/map">
-                Go to Map
-              </Link>
-            </button>
-            <button
-              className="border-b-2 border-transparent md:px-2 hover:border-black hover:shadow-lg transform hover:-translate-y-3 duration-300 ease-in-out "
-            >
-              <Link href="/about-covid">
-                Learn about Covid &rarr;
-              </Link>
-            </button>
+          <div className="md:mt-6 md:flex md:flex-row md:items-center md:justify-center hidden">
+            <Button content="Goto map" link="/map"/>
+            <div className="w-7 h-full"></div>
+            <Button content="Learn more about covid" secondary link="/about" />
           </div>
         </div>
         <div className="sm:w-1/2">
