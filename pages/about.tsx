@@ -2,6 +2,7 @@ import Layout from "../components/Layout"
 import AboutSection from "../components/AboutSections"
 import Button from "../components/Button"
 import Head from 'next/head'
+import AboutContainer from '../components/AboutContainer'
 
 const About = () => {
   return (
@@ -10,9 +11,7 @@ const About = () => {
         <title>About - Covid-19 Tracker</title>
       </Head>
       <Layout>
-        <div className="max-w-screen-md flex flex-col justify-center bg-gray-50 space-y-4 py-5 sm:my-10 sm:mx-10 md:mx-auto">
-          <h1 className="text-center text-2xl md:text-3xl text-gray-900 font-source font-semibold uppercase mt-5">About</h1>
-
+        <AboutContainer title="About">
           <AboutSection title="Is this official?">
             No. This is an open source project created to spread information about Covid-19.
           </AboutSection>
@@ -46,7 +45,7 @@ const About = () => {
               <Button secondary content="Click to learn More" link="/meassures" />
             </div>
           </AboutSection>
-        </div>
+        </AboutContainer>
       </Layout >
     </>
   )
