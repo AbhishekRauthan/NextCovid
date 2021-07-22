@@ -6,12 +6,12 @@
 
 
 body {
-  @apply bg-gray-200;
+  @apply bg-gray-500;
 }
 .nav-item {
   @apply  capitalize text-xl sm:px-2 xs:pt-2 mx-2 py-1 xs:mb-3 xs:text-center border-transparent md:hover:border-black border-b-2 xs:border-b-2 xs:border-black cursor-pointer xs:relative block;
 }
 
 .footer-link {
-  @apply capitalize block w-max text-lg sm:text-xl md:text-2xl font-roboto cursor-pointer  self-center border-b-2;
+  @apply capitalize block w-max text-lg sm:text-xl md:text-2xl font-roboto cursor-pointer  self-center border-b-2 md:border-transparent md:hover:border-white;
 }
