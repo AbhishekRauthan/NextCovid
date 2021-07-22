@@ -27,6 +27,11 @@ const Navbar: FC = () => {
                 measures to take
               </Link>
             </li>
+            <li className="nav-item">
+              <Link href="/map">
+                goto map
+              </Link>
+            </li>
           </nav>
         </div>
         <span className="cursor-pointer sm:hidden" onClick={() => setIsClosed(!isClosed)}>
