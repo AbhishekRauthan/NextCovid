@@ -1,8 +1,8 @@
-import Layout from "../components/Layout"
-import AboutSection from "../components/AboutSections"
-import Button from "../components/Button"
+import Layout from "@components/Layout"
+import AboutSection from "@components/AboutSections"
+import Button from "@components/Button"
 import Head from 'next/head'
-import AboutContainer from '../components/AboutContainer'
+import AboutContainer from '@components/AboutContainer'
 
 const About = () => {
   return (

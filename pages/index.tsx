@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
-import Hero from "../components/Hero";
-import CardContainer from "../components/CardContainer";
-import Card from "../components/Card";
+import Layout from "@components/Layout";
+import Hero from "@components/Hero";
+import CardContainer from "@components/CardContainer";
+import Card from "@components/Card";
 import Head from 'next/head'
 
 export default function Home() {
