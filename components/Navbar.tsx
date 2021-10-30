@@ -5,10 +5,10 @@ const Navbar: FC = () => {
   const [isClosed, setIsClosed] = useState(true);
 
   return (
-    <header className="bg-gray-50 ">
-      <div className="flex md:flex-row z-10 justify-between items-center xs:p-3 sm:px-4 shadow-2xl  xs:relative">
-        <div className="block">
-          <h1 className="xs:text-xl sm:text-3xl sm:py-3 capitalize font-bold font-source">
+    <header className="bg-gray-50 w-full shadow-2xl">
+      <div className="flex md:flex-row z-10 justify-between items-center xs:p-3 sm:px-4 xs:relative md:container py-4">
+        <div className="block border-2 border-transparent hover:border-gray-800 px-1 duration-200">
+          <h1 className="xs:text-xl sm:text-3xl  capitalize font-bold font-source">
             <Link href="/">
               Covid-19 tracker
             </Link>
