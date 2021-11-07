@@ -20,12 +20,7 @@ const Navbar: FC = () => {
               } flex xs:flex-col flex-row justify-evenly w-max xs:p-3 bg-gray-50`}
           >
             <li className="nav-item">
-              <Link href="/about" >goto about</Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/measures">
-                measures to take
-              </Link>
+              <Link href="/about" >about covid</Link>
             </li>
             <li className="nav-item">
               <Link href="/map">
