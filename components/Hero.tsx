@@ -1,4 +1,5 @@
-import Button from '@components/Button'
+import Link from "next/link";
+import Button from "@components/Button";
 
 const Hero = () => {
   return (
@@ -9,16 +10,25 @@ const Hero = () => {
             Covid 19 tracker
           </h1>
           <p className="xs:text-md md:text-lg lg:text-xl text-gray-700 xs:pt-2 sm:mt-3 font-roboto">
-            Learn how to defend yourself from Covid 19, it's rate of spread, countries affected and much more.
+            Learn how to defend yourself from Covid 19, it's rate of spread,
+            countries affected and much more.
           </p>
           <div className="md:mt-6 md:flex md:flex-row md:items-center md:justify-center hidden">
-            <Button content="Goto map" link="/map"/>
+            <Button variant="primary">
+              <Link href="/map">Goto map</Link>
+            </Button>
             <div className="w-7 h-full"></div>
-            <Button content="Learn more about covid" secondary link="/about" />
+            <Button variant="secondary">
+              <Link href="/about">Learn more about covid</Link>
+            </Button>
           </div>
         </div>
         <div className="sm:w-1/2">
-          <img className="inline xs:h-40  text-center w-full  bg-gray-50" src="hero_header.svg" alt="svg to show medical professionals" />
+          <img
+            className="inline xs:h-40 text-center w-full bg-gray-50"
+            src="hero_header.svg"
+            alt="svg to show medical professionals"
+          />
         </div>
       </div>
     </div>
