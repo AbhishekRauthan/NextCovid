@@ -7,7 +7,7 @@ interface Props {}
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <div className="lg:container lg:mx-auto bg-gray-200">
+    <div className="bg-gray-200">
       <Head>
         <meta
           name="viewport"
