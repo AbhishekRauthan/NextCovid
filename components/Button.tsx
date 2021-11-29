@@ -10,14 +10,14 @@ const Button = forwardRef<HTMLButtonElement, Props>(
       return (
         <div className="relative">
           <button
-            className="text-gray-800 text-lg md:text-xl font-roboto font-bold md:hover:translate-x-5 md:delay-150 md:duration-300 md:ease-in-out peer border-l-4 md:border-none pl-3 md:pl-0 border-gray-800"
+            className="text-gray-800 text-lg md:text-xl font-roboto font-bold md:hover:translate-x-5 md:duration-300 md:ease-in-out peer border-l-4 md:border-none pl-3 md:pl-0 border-gray-800"
             ref={ref}
             {...rest}
           >
             {children}
             &rarr;
           </button>
-          <span className="absolute left-0 top-0 h-full w-1 peer-hover:bg-gray-800 delay-150 duration-300 ease-in-out rounded-full hidden md:inline-block" />
+          <span className="absolute left-0 top-0 h-full w-1 peer-hover:bg-gradient-to-b from-gray-800 to-gray-400 duration-300 ease-out rounded-full hidden md:inline-block" />
         </div>
       );
     } else {
