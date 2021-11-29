@@ -13,11 +13,10 @@ const Hero = () => {
             Learn how to defend yourself from Covid 19, it's rate of spread,
             countries affected and much more.
           </p>
-          <div className="md:mt-6 md:flex md:flex-row md:items-center md:justify-center hidden">
+          <div className="md:mt-6 md:flex md:flex-row md:items-center md:justify-center hidden space-x-5">
             <Button variant="primary">
               <Link href="/map">Goto map</Link>
             </Button>
-            <div className="w-7 h-full"></div>
             <Button variant="secondary">
               <Link href="/about">Learn more about covid</Link>
             </Button>
