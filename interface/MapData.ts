@@ -23,6 +23,18 @@ export type AllCountriesData = {
 };
 
 export type CountryDetails = {
-  name:string;
-  value:string;
+  name: string;
+  value: string;
 };
+
+export type CountryData = {
+  country: string;
+  countryInfo: {
+    _id: number;
+    iso2: string;
+    iso3: string;
+    lat: number;
+    long: number;
+    flag: number;
+  };
+} & AllCountriesData;
