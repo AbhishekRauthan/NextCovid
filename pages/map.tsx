@@ -3,14 +3,16 @@ import Layout from "@components/Layout";
 import CovidMap from "@components/CovidMap";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import axios from "axios";
-import { AllCountriesData } from "@interface/MapData";
-
-type Props = {
-  data: AllCountriesData;
-};
+import {
+  AllCountriesData,
+  CountryDetails,
+  CountryData,
+} from "@interface/MapData";
+import { MapDataProp } from "@interface/PropType";
 
 const Map = ({
-  data,
+  allCountriesData,
+  allCountries,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
@@ -18,8 +20,11 @@ const Map = ({
         <title>Map - Covid-19 Tracker</title>
       </Head>
       <Layout>
-        <div className="h-[100vh] max-w-8xl bg-red-200 grid grid-cols-6 mx-auto">
-          <CovidMap data={data} />
+        <div className="h-[100vh] max-w-8xl grid grid-cols-6 mx-auto">
+          <CovidMap
+            allCountriesData={allCountriesData}
+            allCountries={allCountries}
+          />
           <div className="col-span-2 bg-blue-600"></div>
         </div>
       </Layout>
@@ -27,13 +32,23 @@ const Map = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const res = await axios.get<AllCountriesData>(
+export const getServerSideProps: GetServerSideProps<MapDataProp> = async () => {
+  const allCountriesData = await axios.get<AllCountriesData>(
     "https://disease.sh/v3/covid-19/all"
+  );
+  const allCountriesDataDump = await axios.get<CountryData[]>(
+    "https://disease.sh/v3/covid-19/countries"
+  );
+  const countries: CountryDetails[] = allCountriesDataDump.data.map(
+    (country) => ({
+      name: country.country,
+      value: country.countryInfo.iso2,
+    })
   );
   return {
     props: {
-      data: res.data,
+      allCountriesData: allCountriesData.data,
+      allCountries: countries,
     },
   };
 };
