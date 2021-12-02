@@ -1,4 +1,4 @@
-export type AllCountriesData = {
+export type WorldWideData = {
   updated: number;
   cases: number;
   todayCases: number;
@@ -37,4 +37,4 @@ export type CountryData = {
     long: number;
     flag: number;
   };
-} & AllCountriesData;
+} & WorldWideData;
