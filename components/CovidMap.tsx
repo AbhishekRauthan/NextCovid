@@ -1,17 +1,27 @@
-import { MapDataProp } from "@interface/PropType";
+import { MapDataProp, CasesType } from "@interface/PropType";
 import { ChangeEvent, FC, useState } from "react";
 import InfoBox from "./InfoBox";
-import { CountryData, AllCountriesData } from "@interface/MapData";
-import { prettyPrintStat } from "@utils/index";
+import Loading from "./Loading";
+import dynamic from "next/dynamic";
+import { CountryData, WorldWideData } from "@interface/MapData";
+import { prettyPrintStat, total } from "@utils/index";
 import axios, { AxiosResponse } from "axios";
 
-type CasesType = "cases" | "recovered" | "deaths";
+const LeafletMap = dynamic(() => import("@components/LeafletMap"), {
+  loading: () => <Loading />,
+  ssr: false,
+});
 
-const CovidMap: FC<MapDataProp> = ({ allCountries, allCountriesData }) => {
+const CovidMap: FC<MapDataProp> = ({
+  allCountriesDetails,
+  worldWideData,
+  allCountries,
+}) => {
   const [selectedCountry, setSelectedCountry] = useState<string>("all");
-  const [countryInfo, setCountryInfo] = useState<
-    CountryData | AllCountriesData
-  >(allCountriesData);
+  const [center, setCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+  const [countryInfo, setCountryInfo] = useState<CountryData | WorldWideData>(
+    worldWideData
+  );
   const [casesType, setCasesType] = useState<CasesType>("cases");
 
   const onCountryChange = async (e: ChangeEvent<HTMLSelectElement>) => {
@@ -21,12 +31,18 @@ const CovidMap: FC<MapDataProp> = ({ allCountries, allCountriesData }) => {
         ? "https://disease.sh/v3/covid-19/all"
         : `https://disease.sh/v3/covid-19/countries/${selected}`;
 
-    await axios
-      .get(url)
-      .then((response: AxiosResponse<CountryData | AllCountriesData>) => {
-        setSelectedCountry(selected);
-        setCountryInfo(response.data);
+    await axios.get(url).then((response: AxiosResponse<any>) => {
+      setSelectedCountry(selected);
+      setCountryInfo(response.data);
+      setCenter({
+        lat: response.data?.countryInfo?.lat
+          ? response.data.countryInfo.lat
+          : 34.80746,
+        lng: response.data?.countryInfo?.long
+          ? response.data.countryInfo.long
+          : -40.4796,
       });
+    });
   };
 
   return (
@@ -40,7 +56,7 @@ const CovidMap: FC<MapDataProp> = ({ allCountries, allCountriesData }) => {
             onChange={onCountryChange}
           >
             <option value="all">World Wide</option>
-            {allCountries.map((country) => (
+            {allCountriesDetails.map((country) => (
               <option value={country.value} key={country.name}>
                 {country.name}
               </option>
@@ -51,10 +67,11 @@ const CovidMap: FC<MapDataProp> = ({ allCountries, allCountriesData }) => {
       <div className="flex justify-evenly items-center mt-10">
         <InfoBox
           active={casesType === "cases"}
-          title="Coronavirus Cases"
+          title="Cases"
           onClick={() => {
             setCasesType("cases");
           }}
+          total={total(countryInfo.cases)}
           cases={prettyPrintStat(countryInfo.todayCases)}
         />
         <InfoBox
@@ -63,6 +80,7 @@ const CovidMap: FC<MapDataProp> = ({ allCountries, allCountriesData }) => {
           onClick={() => {
             setCasesType("recovered");
           }}
+          total={total(countryInfo.recovered)}
           cases={prettyPrintStat(countryInfo.todayRecovered)}
         />
         <InfoBox
@@ -72,6 +90,14 @@ const CovidMap: FC<MapDataProp> = ({ allCountries, allCountriesData }) => {
             setCasesType("deaths");
           }}
           cases={prettyPrintStat(countryInfo.todayDeaths)}
+          total={total(countryInfo.deaths)}
+        />
+      </div>
+      <div className="flex justify-center">
+        <LeafletMap
+          casesType={casesType}
+          countries={allCountries}
+          center={center}
         />
       </div>
     </div>
