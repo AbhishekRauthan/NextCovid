@@ -40,17 +40,13 @@ export type CountryData = {
 } & WorldWideData;
 
 export type HistoricData = {
-  country: string;
-  province: string;
-  timeline: {
-    cases: {
-      date: number;
-    };
-    deaths: {
-      date: number;
-    };
-    recovered: {
-      date: number;
-    };
+  cases: {
+    date: number;
+  };
+  deaths: {
+    date: number;
+  };
+  recovered: {
+    date: number;
   };
 };

@@ -10,7 +10,7 @@ export type MapDataProp = {
   allCountriesDetails: CountryDetails[];
   allCountries: CountryData[];
   sortedCountries?: CountryData[];
-  historicData?: HistoricData[];
+  historicData?: HistoricData;
 };
 
 export type CasesType = "cases" | "recovered" | "deaths";
