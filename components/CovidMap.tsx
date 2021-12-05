@@ -1,4 +1,4 @@
-import { MapDataProp, CasesType } from "@interface/PropType";
+import { CovidMapProps, CasesType } from "@interface/PropType";
 import { ChangeEvent, FC, useState } from "react";
 import InfoBox from "./InfoBox";
 import Loading from "./Loading";
@@ -12,17 +12,18 @@ const LeafletMap = dynamic(() => import("@components/LeafletMap"), {
   ssr: false,
 });
 
-const CovidMap: FC<MapDataProp> = ({
+const CovidMap: FC<CovidMapProps> = ({
   allCountriesDetails,
   worldWideData,
   allCountries,
+  casesType,
+  setCasesType,
 }) => {
   const [selectedCountry, setSelectedCountry] = useState<string>("all");
   const [center, setCenter] = useState({ lat: 34.80746, lng: -40.4796 });
   const [countryInfo, setCountryInfo] = useState<CountryData | WorldWideData>(
     worldWideData
   );
-  const [casesType, setCasesType] = useState<CasesType>("cases");
 
   const onCountryChange = async (e: ChangeEvent<HTMLSelectElement>) => {
     let selected = e.target.value;
