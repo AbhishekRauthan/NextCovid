@@ -10,7 +10,7 @@ const Footer: FC = () => {
         </h1>
         <ul className="flex flex-col md:flex-row items-center md:items-baseline md:justify-evenly text-center md:max-w-4xl md:mx-auto my-4 space-y-3 md:space-y-0">
           <li className="footer-link">
-            <Link href="/map">goto Map</Link>
+            <Link href="/map">covid map</Link>
           </li>
           <li className="footer-link">
             <Link href="/about">About Covid</Link>

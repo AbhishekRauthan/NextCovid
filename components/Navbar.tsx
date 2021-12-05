@@ -24,7 +24,7 @@ const Navbar: FC = () => {
             </li>
             <li className="nav-item">
               <Link href="/map">
-                goto map
+                covid map
               </Link>
             </li>
           </nav>
