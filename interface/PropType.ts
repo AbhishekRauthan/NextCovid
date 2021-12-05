@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import {
   WorldWideData,
   CountryDetails,
@@ -5,7 +6,7 @@ import {
   HistoricData,
 } from "./MapData";
 
-export type MapDataProp = {
+export type MapPageProp = {
   worldWideData: WorldWideData;
   allCountriesDetails: CountryDetails[];
   allCountries: CountryData[];
@@ -13,4 +14,11 @@ export type MapDataProp = {
   historicData?: HistoricData;
 };
 
+export type CovidMapProps = {
+  worldWideData: WorldWideData;
+  allCountriesDetails: CountryDetails[];
+  allCountries: CountryData[];
+  casesType: CasesType;
+  setCasesType: Dispatch<SetStateAction<CasesType>>;
+};
 export type CasesType = "cases" | "recovered" | "deaths";
