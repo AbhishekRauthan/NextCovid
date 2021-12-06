@@ -3,18 +3,34 @@ import Layout from "@components/Layout";
 import CovidMap from "@components/CovidMap";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { sortData } from "@utils/index";
+import Loading from "@components/Loading";
+import dynamic from "next/dynamic";
 import axios from "axios";
-import { WorldWideData, CountryDetails, CountryData } from "@interface/MapData";
-import { MapDataProp } from "@interface/PropType";
+import {
+  WorldWideData,
+  CountryDetails,
+  CountryData,
+  HistoricData,
+} from "@interface/MapData";
+import { CasesType, MapPageProp } from "@interface/PropType";
 import "leaflet/dist/leaflet.css";
 import numeral from "numeral";
+import { useState } from "react";
+
+const LineGraph = dynamic(() => import("@components/LineGraph"), {
+  loading: () => <Loading />,
+  ssr: false,
+});
 
 const Map = ({
   worldWideData,
   allCountriesDetails,
   allCountries,
   sortedCountries,
+  historicData,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const [caseType, setCasesType] = useState<CasesType>("cases");
+
   return (
     <>
       <Head>
@@ -26,9 +42,11 @@ const Map = ({
             worldWideData={worldWideData}
             allCountriesDetails={allCountriesDetails}
             allCountries={allCountries}
+            casesType={caseType}
+            setCasesType={setCasesType}
           />
           <div className="col-span-2 bg-gray-100">
-            <div className=" flex flex-col m-5 border-2 border-gray-800">
+            <div className=" flex flex-col mx-5 mt-5 border-2 border-gray-800">
               <h1 className="capitalize text-center font-roboto text-2xl">
                 Live Cases By country
               </h1>
@@ -46,6 +64,7 @@ const Map = ({
                 ))}
               </div>
             </div>
+            <LineGraph casesType={caseType} historicData={historicData} />
           </div>
         </div>
       </Layout>
@@ -53,7 +72,7 @@ const Map = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps<MapDataProp> = async () => {
+export const getServerSideProps: GetServerSideProps<MapPageProp> = async () => {
   const allCountriesData = await axios.get<WorldWideData>(
     "https://disease.sh/v3/covid-19/all"
   );
@@ -64,14 +83,19 @@ export const getServerSideProps: GetServerSideProps<MapDataProp> = async () => {
     name: country.country,
     value: country.countryInfo.iso2,
   }));
+  const historicalData = await axios.get<HistoricData>(
+    "https://disease.sh/v3/covid-19/historical/all?lastdays=120"
+  );
 
   const sortedCountries = sortData(allCountries.data);
+
   return {
     props: {
       worldWideData: allCountriesData.data,
       allCountriesDetails: countries,
       allCountries: allCountries.data,
       sortedCountries,
+      historicData: historicalData.data,
     },
   };
 };
