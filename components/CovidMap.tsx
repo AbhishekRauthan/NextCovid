@@ -47,13 +47,13 @@ const CovidMap: FC<CovidMapProps> = ({
   };
 
   return (
-    <div className="col-span-4 bg-gray-200 pt-5">
-      <div className="flex justify-between items-center px-10">
-        <h1 className="text-4xl block text-gray-800">World Map</h1>
-        <div className="flex flex-grow items-baseline justify-end">
-          <p className="mr-5">Select to see worldwide data or country wise:</p>
+    <div className="lg:col-span-4 bg-gray-200 pt-5">
+      <div className="flex flex-col md:flex-row justify-between items-center px-10">
+        <h1 className="text-4xl inline-flex text-gray-800 mb-3 lg:mb-0">World Map</h1>
+        <div className="flex flex-col md:flex-row md:w-3/4 lg:flex-grow items-baseline justify-between lg:justify-end">
+          <p className="mb-3 lg:mb-0 lg:mr-5">Select worldwide or country data:</p>
           <select
-            className="bg-white text-xl p-2 max-w-[15rem] rounded border border-transparent focus:border-blue-400"
+            className="bg-white text-xl p-2 mx-auto w-[8rem] lg:w-[15rem] rounded border border-transparent focus:border-blue-400"
             onChange={onCountryChange}
           >
             <option value="all">World Wide</option>
@@ -65,7 +65,7 @@ const CovidMap: FC<CovidMapProps> = ({
           </select>
         </div>
       </div>
-      <div className="flex justify-evenly items-center mt-10">
+      <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-evenly items-center mt-4 lg:mt-10">
         <InfoBox
           active={casesType === "cases"}
           title="Cases"

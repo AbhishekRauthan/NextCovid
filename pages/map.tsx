@@ -37,7 +37,7 @@ const Map = ({
         <title>Map - Covid-19 Tracker</title>
       </Head>
       <Layout>
-        <div className="h-[100vh] max-w-8xl grid grid-cols-6 mx-auto">
+        <div className="max-w-8xl grid grid-cols-1 lg:grid-cols-6 mx-auto">
           <CovidMap
             worldWideData={worldWideData}
             allCountriesDetails={allCountriesDetails}
@@ -45,7 +45,7 @@ const Map = ({
             casesType={caseType}
             setCasesType={setCasesType}
           />
-          <div className="col-span-2 bg-gray-100">
+          <div className="lg:col-span-2 bg-gray-100">
             <div className=" flex flex-col mx-5 mt-5 border-2 border-gray-800">
               <h1 className="capitalize text-center font-roboto text-2xl">
                 Live Cases By country
