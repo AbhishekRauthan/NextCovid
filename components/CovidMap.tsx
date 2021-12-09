@@ -8,7 +8,11 @@ import { prettyPrintStat, total } from "@utils/index";
 import axios, { AxiosResponse } from "axios";
 
 const LeafletMap = dynamic(() => import("@components/LeafletMap"), {
-  loading: () => <Loading />,
+  loading: () => (
+    <div className="mt-3">
+      <Loading />
+    </div>
+  ),
   ssr: false,
 });
 
@@ -49,9 +53,13 @@ const CovidMap: FC<CovidMapProps> = ({
   return (
     <div className="lg:col-span-4 bg-gray-200 pt-5">
       <div className="flex flex-col md:flex-row justify-between items-center px-10">
-        <h1 className="text-4xl inline-flex text-gray-800 mb-3 lg:mb-0">World Map</h1>
+        <h1 className="text-4xl inline-flex text-gray-800 mb-3 lg:mb-0">
+          World Map
+        </h1>
         <div className="flex flex-col md:flex-row md:w-3/4 lg:flex-grow items-baseline justify-between lg:justify-end">
-          <p className="mb-3 lg:mb-0 lg:mr-5">Select worldwide or country data:</p>
+          <p className="mb-3 lg:mb-0 lg:mr-5">
+            Select worldwide or country data:
+          </p>
           <select
             className="bg-white text-xl p-2 mx-auto w-[8rem] lg:w-[15rem] rounded border border-transparent focus:border-blue-400"
             onChange={onCountryChange}

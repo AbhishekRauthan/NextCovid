@@ -17,7 +17,11 @@ import numeral from "numeral";
 import { useState } from "react";
 
 const LineGraph = dynamic(() => import("@components/LineGraph"), {
-  loading: () => <Loading />,
+  loading: () => (
+    <div className="flex justify-center items-center mt-3">
+      <Loading />
+    </div>
+  ),
   ssr: false,
 });
 
