@@ -1,4 +1,3 @@
-import Layout from "@components/Layout";
 import AboutSection from "@components/AboutSections";
 import Button from "@components/Button";
 import Head from "next/head";
@@ -10,7 +9,7 @@ const About = () => {
       <Head>
         <title>About - Covid-19 Tracker</title>
       </Head>
-      <Layout>
+      <>
         <AboutContainer title="About">
           <AboutSection title="Is this official?">
             No. This is an open source project created to spread information
@@ -56,7 +55,7 @@ const About = () => {
             </Button>
           </div>
         </AboutContainer>
-      </Layout>
+      </>
     </>
   );
 };
