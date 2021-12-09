@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Layout from "@components/Layout";
 import CovidMap from "@components/CovidMap";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { sortData } from "@utils/index";
@@ -36,7 +35,7 @@ const Map = ({
       <Head>
         <title>Map - Covid-19 Tracker</title>
       </Head>
-      <Layout>
+      <>
         <div className="max-w-8xl grid grid-cols-1 lg:grid-cols-6 mx-auto">
           <CovidMap
             worldWideData={worldWideData}
@@ -67,7 +66,7 @@ const Map = ({
             <LineGraph casesType={caseType} historicData={historicData} />
           </div>
         </div>
-      </Layout>
+      </>
     </>
   );
 };

@@ -1,4 +1,3 @@
-import Layout from '@components/Layout'
 import Head from 'next/head'
 
 const Error = () => {
@@ -7,7 +6,7 @@ const Error = () => {
       <Head>
         <title>Page not found - Covid-19 Tracker</title>
       </Head>
-      <Layout>
+      <>
         <div className="grid place-content-center md:h-[86vh]">
           <div className="mx-auto my-11 bg-white py-10 md:py-14 px-5 md:px-8 w-2/3 md:w-[90%]  text-center shadow-xl flex flex-col md:flex-row md:flex-wrap md:justify-center md:items-center">
             <h1
@@ -25,7 +24,7 @@ const Error = () => {
             </p>
           </div>
         </div>
-      </Layout>
+      </>
     </>
   )
 }

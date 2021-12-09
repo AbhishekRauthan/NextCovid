@@ -1,4 +1,3 @@
-import Layout from "@components/Layout";
 import Hero from "@components/Hero";
 import CardContainer from "@components/CardContainer";
 import Card from "@components/Card";
@@ -10,7 +9,7 @@ export default function Home() {
     <Head>
       <title>Covid-19 Tracker</title>
     </Head>
-    <Layout>
+    <>
       <Hero />
       <CardContainer>
         <Card
@@ -33,7 +32,7 @@ export default function Home() {
           notTopItem
         />
       </CardContainer>
-    </Layout>
+    </>
   </>
   );
 }
