@@ -2,7 +2,7 @@
 
 ### [Live Site](https://next-covid.netlify.app/)
 
-![Title-image](https://github.com/AbhishekRauthan/NextCovid/tree/main/public/sc.png)
+![Title-image](https://github.com/AbhishekRauthan/NextCovid/blob/main/public/sc.png)
 
 ## Introduction
 
