@@ -1,12 +1,10 @@
 # Covid 19 Tracker
 
+This is NextJS front-end application that provides information regarding Covid-19, this includes a world map that changes it's center based on user selection and an about page with information regarding symptoms, etc.
+
 ### [Live Site](https://next-covid.netlify.app/)
 
-![Title-image](https://github.com/AbhishekRauthan/NextCovid/tree/main/public/sc.png)
-
-## Introduction
-
-This is a code repository for the Covid 19 tracker.
+![Title-image](https://raw.githubusercontent.com/AbhishekRauthan/NextCovid/main/public/sc.png)
 
 ## Features
 
@@ -31,4 +29,4 @@ $ cd NextCovid
 $ yarn && yarn start
 ```
 
-The app starts in development mode and opens a browser window on `http://localhost:3000`. The project rebuilds and the browser reloads automatically when source files are changed. Any build or runtime errors are propagated and displayed in the browser.
+The app starts in development mode and opens a browser window on `http://localhost:3000`.

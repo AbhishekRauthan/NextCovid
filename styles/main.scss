@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+.nav-item {
+  @apply capitalize text-xl sm:px-2 xs:pt-2 mx-2 py-1 xs:mb-3 xs:text-center border-transparent md:hover:border-black border-b-2 xs:border-b-2 xs:border-black cursor-pointer xs:relative block;
+}
+
+.footer-link {
+  @apply capitalize block w-max text-lg sm:text-xl md:text-2xl font-roboto cursor-pointer  self-center border-b-2 md:border-transparent md:hover:border-white;
+}
+
+.up-animation {
+  animation: up 2s ease-in-out;
+  animation-delay: calc(var(--order) * 300ms);
+}
+
+@keyframes up {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateY(calc(var(--order) * -100px));
+  }
+
+  to {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.opacity-animation {
+  animation: opacity 2s ease-in-out;
+}
+
+@keyframes opacity {
+  from {
+    display: none;
+    opacity: 0;
+  }
+
+  to {
+    display: block;
+    opacity: 1;
+  }
+}

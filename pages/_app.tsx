@@ -3,7 +3,7 @@ import { useState } from "react";
 import Router from "next/router";
 import Loading from "@components/Loading";
 import Layout from "@components/Layout";
-import "../styles/main.css";
+import "../styles/main.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);

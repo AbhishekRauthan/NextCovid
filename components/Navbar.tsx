@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 import { FC, useState } from "react";
 
 const Navbar: FC = () => {
@@ -7,29 +7,31 @@ const Navbar: FC = () => {
   return (
     <header className="bg-gray-50 w-full shadow-2xl">
       <div className="flex md:flex-row z-10 justify-between items-center xs:p-3 sm:px-4 xs:relative md:container py-4">
-        <div className="block border-2 border-transparent hover:border-gray-800 px-1 duration-200">
-          <h1 className="xs:text-xl sm:text-3xl  capitalize font-bold font-source">
-            <Link href="/">
+        <div className="block border-2 border-transparent hover:border-gray-800 px-1 duration-200 cursor-pointer">
+          <Link href="/">
+            <h1 className="xs:text-xl sm:text-3xl  capitalize font-bold font-source">
               Covid-19 tracker
-            </Link>
-          </h1>
+            </h1>
+          </Link>
         </div>
         <div className="absolute xs:top-12 xs:right-1 sm:relative xs:flex xs:flex-col xs:items-end  xs:shadow-2xl">
           <nav
-            className={`${isClosed ? "xs:hidden" : ""
-              } flex xs:flex-col flex-row justify-evenly w-max xs:p-3 bg-gray-50`}
+            className={`${
+              isClosed ? "xs:hidden" : ""
+            } flex xs:flex-col flex-row justify-evenly w-max xs:p-3 bg-gray-50`}
           >
-            <li className="nav-item">
-              <Link href="/about" >about covid</Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/map">
-                covid map
-              </Link>
-            </li>
+            <Link href="/about">
+              <li className="nav-item">about covid</li>
+            </Link>
+            <Link href="/map">
+              <li className="nav-item">covid map</li>
+            </Link>
           </nav>
         </div>
-        <span className="cursor-pointer sm:hidden" onClick={() => setIsClosed(!isClosed)}>
+        <span
+          className="cursor-pointer sm:hidden"
+          onClick={() => setIsClosed(!isClosed)}
+        >
           <svg
             className={isClosed ? `xs:h-6 xs:w-6 sm:hidden` : "hidden"}
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +61,6 @@ const Navbar: FC = () => {
             />
           </svg>
         </span>
-
       </div>
     </header>
   );

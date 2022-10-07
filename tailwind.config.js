@@ -1,7 +1,5 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
-  mode: "jit",
-  darkMode: false, // or 'media' or 'class'
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       screens: {
@@ -14,11 +12,6 @@ module.exports = {
       container: {
         center: true,
       },
-    },
-  },
-  variants: {
-    extend: {
-      transform: ["hover", "focus"],
     },
   },
   plugins: [],
