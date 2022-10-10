@@ -15,15 +15,15 @@ type Props = {
 const casesTypeColors = {
   cases: {
     hex: "#DC2626",
-    multiplier: 200,
+    multiplier: 50,
   },
   recovered: {
     hex: "#16A34A",
-    multiplier: 300,
+    multiplier: 80,
   },
   deaths: {
     hex: "#475569",
-    multiplier: 800,
+    multiplier: 60,
   },
 };
 
@@ -36,7 +36,7 @@ function SetViewOnClick({ coords }) {
 
 const LeafletMap = ({ casesType, countries, center }: Props) => {
   return (
-    <div className="h-[300px] w-full md:h-[200px] md:w-[800px] mx-auto lg:h-[500px] lg:w-full bg-white shadow-lg p-4 mt-4">
+    <div className="h-full w-full md:h-[200px] md:w-[800px] mx-auto lg:h-[500px] lg:w-full bg-white shadow-lg p-4 mt-4">
       <MapContainer zoom={3} center={center} className="h-full">
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

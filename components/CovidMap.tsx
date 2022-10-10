@@ -51,8 +51,8 @@ const CovidMap: FC<CovidMapProps> = ({
   };
 
   return (
-    <div className="lg:col-span-4 bg-gray-200 pt-5">
-      <div className="flex flex-col md:flex-row justify-between items-center px-10">
+    <div className="lg:col-span-4 bg-gray-200 pt-5 transform transition-all animate-load">
+      <div className="flex flex-col md:flex-row justify-between items-baseline px-10 lg:space-x-3">
         <h1 className="text-4xl inline-flex text-gray-800 mb-3 lg:mb-0">
           World Map
         </h1>
@@ -102,7 +102,7 @@ const CovidMap: FC<CovidMapProps> = ({
           total={total(countryInfo.deaths)}
         />
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center h-full">
         <LeafletMap
           casesType={casesType}
           countries={allCountries}
