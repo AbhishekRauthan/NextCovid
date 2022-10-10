@@ -3,8 +3,8 @@ import Button from "@components/Button";
 
 const Hero = () => {
   return (
-    <div className="xs:w-72 w-10/12 md:w-11/12 lg:h-full lg:w-9/12 mx-auto my-10">
-      <div className="shadow-2xl text-center bg-white flex xs:p-5  xs:flex-col-reverse lg:h-2/5 xs:my-5 mx-auto transform transition-all animate-load">
+    <section className="xs:w-72 w-10/12 md:w-11/12 lg:h-full lg:w-9/12 mx-auto my-10">
+      <div className="shadow-2xl text-center bg-white flex xs:p-5  xs:flex-col-reverse lg:h-2/5 xs:my-5 mx-auto opacity-animation">
         <div className="flex flex-col sm:my-10 sm:w-1/2 md:my-auto md:pb-9">
           <h1 className="text-3xl sm:pt-8 md:text-4xl lg:text-5xl capitalize  font-source text-gray-900 xs:pt-4">
             Covid 19 tracker
@@ -30,7 +30,7 @@ const Hero = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
